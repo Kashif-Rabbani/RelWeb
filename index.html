@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RelWeb</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
+  <link href="css/mdb.min.css?ver=1.1.0" rel="stylesheet">
+  <link href="css/main.css?ver=1.1.0" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script type="text/javascript" src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+
+</head>
+
+<body id="top">
+  <header>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
+      <div class="container"><a class="navbar-brand" href="#"><strong>RelWeb</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          <!-- <a class="btn btn-primary btn-rounded my-0" href="https://templateflip.com/templates/material-landing" target="_blank">Download</a> -->
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Intro Section-->
+    <section class="view hm-gradient" id="">
+      <div id="particles-js"></div>
+      <div class="site-bg-img d-flex align-items-center">
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-md-10 col-lg-6 text-center text-md-left margins">
+              <div class="white-text">
+                <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                  <h1 class="h1-responsive font-weight-bold mt-sm-5">A Reliable Web of Data.</h1>
+                  <div class="h5">
+                    RelWeb project provides means to reliable Web of Data.
+                  </div>
+                </div><br>
+                <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                  <!-- <a class="btn btn-white dark-grey-text font-weight-bold ml-0" href="https://www.youtube.com/watch?v=60ItHLz5WEA" target="_blank"><i class="fa fa-play mr-1"></i> View Demo</a> -->
+                  <a class="btn btn-outline-white" href="#projects">Our Projects</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </header>
+  <div id="content">
+    <section class="text-center py-5 grey lighten-4" id="about">
+      <div class="container">
+        <div class="wow fadeIn">
+          <h2 class="h1 pt-5 pb-3">What is RelWeb?</h2>
+          <p class="px-5 mb-5 pb-3 lead blue-grey-text text-justify">
+            The growing popularity of the Open Data movement means, that the <b>Semantic Web</b> provides access to vast amounts of (semi-)structured data designed for machine access covering diverse topics. Though the Semantic Web has a great
+            potential, it
+            today relies solely on the data providers to publish their datasets through either downloadable data dumps, SPARQL endpoints or dereferencable URIs.
+            <br>
+            However, previous research has shown that public SPARQL endpoints are, at times,
+            unavailable for queries.
+
+            As a result, it can in some cases be impossible to follow links between entities used in multiple datasets. This lays a huge burden on the data providers, one they have little incentive to fulfil.
+            <br>
+            RelWeb aims at developing techniques that use replication and <b>blockchain / peer-to-peer (P2P)</b> principles to relieve data providers from the burden of having to ensure uninterrupted availability of their Web interfaces. In doing so,
+            RelWeb will establish
+            a reliable WoD whose architecture better matches the decentralized character of the current human-centric Web.
+          </p>
+        </div>
+        <div class="row">
+          <!-- fa-dashboard, fa-cubes -->
+          <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".2s"><i class="fa fa-globe fa-3x orange-text"></i>
+            <h3 class="h4 mt-3">Semantic Web</h3>
+            <p class="mt-3 blue-grey-text text-justify">
+              The Semantic Web is an extension of the World Wide Web through standards set by the World Wide Web Consortium. The goal of the Semantic Web is to make Internet data machine-readable
+            </p>
+          </div>
+          <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-connectdevelop fa-3x cyan-text"></i>
+            <h3 class="h4 mt-3">Knowledge Graphs</h3>
+            <p class="mt-3 blue-grey-text text-justify">
+              Knowledge graph is a knowledge base that uses a graph-structured data model or topology to integrate data.
+              Knowledge graphs are used to store interlinked descriptions of entities, objects, events – with free-form semantics.
+            </p>
+          </div>
+          <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-snowflake-o fa-3x red-text"></i>
+            <h3 class="h4 mt-3">SPARQL</h3>
+            <p class="mt-3 blue-grey-text text-justify">
+              SPARQL is an RDF query language—that is, a semantic query language for databases—able to retrieve and manipulate data stored in Resource Description Framework format
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="py-5" id="projects">
+      <div class="container">
+        <div class="wow fadeIn">
+          <h2 class="text-center h1 my-4">Our Projects</h2>
+          <p class="px-5 mb-5 pb-3 lead blue-grey-text text-center">
+            These projects demonstrate our progress towards our goal.
+          </p>
+        </div>
+        <div class="row wow fadeIn " data-wow-delay=".2s">
+          <div class="col-lg-5 col-xl-6 pl-lg-5 pb-0">
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-chain-broken fa-2x cyan-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">ColChain</h5>
+                <p class="grey-text">
+                  Collaborative Linked Data Networks.
+                </p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-eye fa-2x red-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">WiseKG</h5>
+                <p class="grey-text">
+                  Balanced Access to Web Knowledge Graphs.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-1 mr-1"><i class="fa fa-cubes fa-2x deep-purple-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">RDFShapes</h5>
+                <p class="grey-text">
+                  Optimizing SPARQL Queries using Shape Statistics.
+                </p>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-align-center fa-2x indigo-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">PPBFs</h5>
+                <p class="grey-text">
+                  Decentralized Indexing over a Network of RDF Peers.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-xl-6 pr-lg-5 pb-0">
+
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-file-code-o fa-2x pink-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">Factify</h5>
+                <p class="grey-text">
+                  Retrieving Textual Evidence for Knowledge Graph Facts.
+                </p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-share-alt fa-2x blue-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">PIQNIC</h5>
+                <p class="grey-text">
+                  A Decentralized Architecture for Sharing and Querying Semantic Data.
+                </p>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-object-group fa-2x blue-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">RDFev</h5>
+                <p class="grey-text">
+                  Framework for the Evolution of RDF Data.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- <hr /> -->
+        <!-- <div class="row pt-5 wow fadeInRight" data-wow-delay=".2s">
+          <div class="col-lg-6 col-xl-7 mb-3">
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-bar-chart fa-2x indigo-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">PPBFs</h5>
+                <p class="grey-text">
+                  Decentralized Indexing over a Network of RDF Peers.
+                </p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-music fa-2x pink-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">Factify</h5>
+                <p class="grey-text">
+                Retrieving Textual Evidence for Knowledge Graph Facts.
+                </p>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-smile-o fa-2x blue-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">PIQNIC</h5>
+                <p class="grey-text">
+                  A Decentralized Architecture for Sharing and Querying Semantic Data.
+                </p>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-1 mr-1"><i class="fa fa-smile-o fa-2x blue-text"></i></div>
+              <div class="col-10">
+                <h5 class="font-weight-bold">RDFev</h5>
+                <p class="grey-text">
+                Framework for the Evolution of RDF Data.
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-6 col-xl-5 mb-3"><img class="img-fluid rounded z-depth-2" src="img/san-francisco.jpg" alt="project image" /></div>
+        </div> -->
+      </div>
+    </section>
+
+    <section class="text-center py-5 indigo darken-1 text-white" id="publications">
+      <div class="container">
+        <div class="wow fadeIn">
+          <h2 class="h1 pt-5 pb-3">Our Publications</h2>
+          <p class="px-5 mb-0 pb-3 lead">
+            We have published our work in top international venues.
+          </p>
+        </div>
+        <div class="row wow zoomIn">
+
+          <div class="col-lg-12 col-md-12 mb-5 text-justify">
+            <ul>
+
+              <li>
+                <span class="fw-bold"><b>ColChain: Collaborative Linked Data Networks</b></span><br>
+                <span> <span itemprop="author" itemscope itemtype="http://schema.org/Person"> Christian Aebeloe</span>,<span itemprop="author" itemscope itemtype="http://schema.org/Person"> Gabriela Montoya</span>, and <span itemprop="author"
+                    itemscope itemtype="http://schema.org/Person">Katja Hose.</span> </span>
+                <span>In Proceedings of the 30th The Web Conference (WWW 2021)</span>
+                <p>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/colchain/" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> More Info</a>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/colchain/files/ColChain.pdf" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                </p>
+              </li>
+
+
+              <li>
+                <span class="fw-bold"><b>WiseKG: Balanced Access to Web Knowledge Graphs</b></span><br>
+                <span>Amr Azzam, Christian Aebeloe, Gabriela Montoya, Ilkcan Keles, Axel Polleres, Katja Hose.</span>
+                <span>In Proceedings of the 30th The Web Conference (WWW 2021)</span>
+                <p>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://github.com/WiseKG/WiseKG-Experiments" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> More Info</a>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/colchain/files/WiseKG.pdf" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                </p>
+              </li>
+
+
+              <li>
+                <span><b>Optimizing SPARQL Queries using Shape Statistics</b></span><br>
+                <span> <span itemprop="author" itemscope itemtype="http://schema.org/Person"> Kashif Rabbani</span>,<span itemprop="author" itemscope itemtype="http://schema.org/Person"> Matteo Lissandrini</span>, and <span itemprop="author"
+                    itemscope itemtype="http://schema.org/Person">Katja Hose.</span> </span>
+                <span>In Proceedings of the 24th International Conference on Extending Database Technology, EDBT 2021.</span>
+                <p>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/rdfshapes/" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> More Info</a>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/rdfshapes/files/edbt2021.pdf" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                </p>
+              </li>
+
+
+              <li>
+                <span class="fw-bold"><b>Decentralized Indexing over a Network of RDF Peers</b></span><br>
+                <span> <span itemprop="author" itemscope itemtype="http://schema.org/Person"> Christian Aebeloe</span>,<span itemprop="author" itemscope itemtype="http://schema.org/Person"> Gabriela Montoya</span>, and <span itemprop="author"
+                    itemscope itemtype="http://schema.org/Person">Katja Hose.</span> </span>
+                <span>In Proceedings of the 18th International Semantic Web Conference (ISWC 2019)</span>
+                <p>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/ppbfs/" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> More Info</a>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/ppbfs/files/ISWC19.pdf" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                </p>
+              </li>
+
+
+              <li>
+                <span class="fw-bold"><b>Retrieving Textual Evidence for Knowledge Graph Facts</b></span><br>
+                <span> Gonenc Ercan, Shady Elbassuoni, Katja Hose.</span>
+                <span>In Proceedings of the 16th European Semantic Web Conference (ESWC 2019)</span>
+                <p>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/factify/" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> More Info</a>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/factify/files/ESWC2019.pdf" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                </p>
+              </li>
+
+
+
+              <li>
+                <span class="fw-bold"><b>A Decentralized Architecture for Sharing and Querying Semantic Data</b></span><br>
+                <span> <span itemprop="author" itemscope itemtype="http://schema.org/Person"> Christian Aebeloe</span>,<span itemprop="author" itemscope itemtype="http://schema.org/Person"> Gabriela Montoya</span>, and <span itemprop="author"
+                    itemscope itemtype="http://schema.org/Person">Katja Hose.</span> </span>
+                <span>In Proceedings of the 16th European Semantic Web Conference (ESWC 2019)</span>
+                <p>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/piqnic/" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> More Info</a>
+                  <a class="btn btn-info btn-sm" target="_blank" href="https://relweb.cs.aau.dk/piqnic/files/ESWC2019.pdf" role="button" aria-expanded="false"><i class="fas fa-external-link-alt"> </i> PDF</a>
+                </p>
+              </li>
+
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="team">
+      <div class="container">
+        <div class="wow fadeIn">
+          <h2 class="h1 pt-5 pb-3 text-center">Our team members</h2>
+          <p class="px-5 mb-5 pb-3 lead text-center blue-grey-text">
+            Our team consists of people with different backgrounds, nationalities and personalities. This combination makes it a strong team who always collaborate to join the best and bring out the best.
+          </p>
+        </div>
+        <div class="row mb-lg-4 center-on-small-only">
+          <div class="col-lg-6 col-md-12 mb-5 wow fadeInLeft" data-wow-delay=".2s">
+            <div class="col-md-4 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/khose.png" alt="team member" /></div>
+            <div class="col-md-8 float-right">
+              <div class="h4">Katja Hose</div>
+              <h6 class="font-weight-bold blue-grey-text mb-4">Professor</h6>
+              <p class="grey-text text-justify">Katja Hose is a professor at the department of Computer Science at Aalborg University (AAU). Before joining Aalborg University, she was a post-doctoral researcher at the Max Planck Institute for
+                Informatics in Saarbrücken, Germany, and obtained her doctoral degree in Computer Science from Ilmenau University of Technology. Her research interests include Linked Open Data, knowledge representation, query processing and
+                optimization in distributed systems, rank-aware query operators, and energy data management.</p>
+              <a href="https://twitter.com/HoseKatja" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@HoseKatja</span></a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 mb-5 wow fadeInRight" data-wow-delay=".2s">
+            <div class="col-md-4 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/gabriela.jpeg" alt="team member" /></div>
+            <div class="col-md-8 float-right">
+              <div class="h4">Gabriela Montoya</div>
+              <h6 class="font-weight-bold blue-grey-text mb-4">Associate Professor</h6>
+              <p class="grey-text text-justify">Gabriela Montoya is an assistant professor at the department of Computer Science at Aalborg University. Before joining Aalborg University, she was part of the Distributed Data Management team (GDD), at
+                the Laboratory of Informatics of Nantes Atlantique (LINA) in France. She got her doctoral degree in Computer Science from the University of Nantes. She works on query processing, with focus on source selection and query decomposition.
+              </p>
+              <a href="https://scholar.google.com/citations?user=qXfMXnYAAAAJ" target="_blank"><i class="fa fa-graduation-cap"></i><span class="ml-1">@gabriela</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="row center-on-small-only">
+          <div class="col-lg-6 col-md-12 mb-5 wow fadeInLeft" data-wow-delay=".2s">
+            <div class="col-md-4 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/aebeloe.jpg" alt="team member" /></div>
+            <div class="col-md-8 float-right">
+              <div class="h4">Christian Aebeloe</div>
+              <h6 class="font-weight-bold blue-grey-text mb-4">PhD Fellow</h6>
+              <p class="grey-text text-justify">Christian Aebeloe is a Ph.D. Fellow at the department of Computer Science of Aalborg University. His work has focus on the field of efficient query processing over decentralized Web sources. His other
+                interests lie in ensuring continued availability and trust of the LOD cloud.</p>
+              <a href="https://twitter.com/Chraebe" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@Chraebe</span></a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 mb-5 wow fadeInRight" data-wow-delay=".2s">
+            <div class="col-md-4 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/rabbani.jpg" alt="team member" /></div>
+            <div class="col-md-8 float-right">
+              <div class="h4">Kashif Rabbani</div>
+              <h6 class="font-weight-bold blue-grey-text mb-4">PhD Fellow</h6>
+              <p class="grey-text text-justify">Kashif Rabbani is a Ph.D. Fellow at the department of Computer Science of Aalborg University. His work has focused on the field of efficient query processing on Web. His other interests lie in the field
+                of validation and storage of RDF graphs and Polystores.</p>
+              <a href="https://twitter.com/chkashifrabbani" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@chkashifrabbani</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" style="background-image:url('img/aau.jpg')">
+      <div class="rgba-black-strong py-5">
+        <div class="container">
+          <div class="wow fadeIn">
+            <h2 class="h1 text-white pt-5 pb-3 text-center">Contact us</h2>
+            <p class="text-white px-5 mb-5 pb-3 lead text-center">
+            </p>
+          </div>
+          <div class="card mb-5 wow fadeInUp" data-wow-delay=".4s">
+            <div class="card-body p-5">
+              <div class="row">
+                <!-- <div class="col-md-8">
+                  <form action="https://formspree.io/youremail@example.com" method="POST">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="md-form">
+                          <input class="form-control" id="name" type="text" name="name" required="required" />
+                          <label for="name">Your name</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="md-form">
+                          <input class="form-control" id="email" type="text" name="_replyto" required="required" />
+                          <label for="email">Your email</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="md-form">
+                          <input class="form-control" id="subject" type="text" name="subject" required="required" />
+                          <label for="subject">Subject</label>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="md-form">
+                          <textarea class="md-textarea" id="message" name="message" required="required"></textarea>
+                          <label for="message">Your message</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="center-on-small-only mb-4">
+                      <button class="btn btn-indigo ml-0" type="submit"><i class="fa fa-paper-plane-o mr-2"></i> Send</button>
+                    </div>
+                  </form>
+                </div> -->
+                <div class="col-md-12">
+                  <ul class="list-unstyled text-center">
+                    <li class="mt-4"><i class="fa fa-map-marker indigo-text fa-2x"></i>
+                      <p class="mt-2">Aalborg University <br> Department of Computer Science <br> Selma Lagerlöfs Vej 300, DK-9220 Aalborg Ø. Denmark</p>
+                    </li>
+                    <!-- <li class="mt-4"><i class="fa fa-phone indigo-text fa-2x"></i>
+                      <p class="mt-2">+ 01 234 567 89</p>
+                    </li> -->
+                    <li class="mt-4"><i class="fa fa-envelope indigo-text fa-2x"></i>
+                      <p class="mt-2">khose@cs.aau.dk</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mb-5 flex-center">
+            <p> This project is funded by the Danish Council for Independent Research (DFF) under grant agreement number DFF-8048-00051B.</p>
+            <!-- <a class="px-3" href="#"><i class="fa fa-facebook fa-lg white-text"></i></a>
+            <a class="px-3" href="#"><i class="fa fa-twitter fa-lg white-text"></i></a>
+            <a class="px-3" href="#"><i class="fa fa-google-plus fa-lg white-text"></i></a>
+            <a class="px-3" href="#"><i class="fa fa-linkedin fa-lg white-text"></i></a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3 font-small">
+      <div class="container-fluid">
+        <div>&copy; <a href="https://relweb.cs.aau.dk/">RelWeb 2019-21. </a> All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="scripts/jquery.min.js?ver=1.1.0"></script>
+  <script type="text/javascript" src="scripts/popper.min.js?ver=1.1.0"></script>
+  <script type="text/javascript" src="scripts/bootstrap.min.js?ver=1.1.0"></script>
+  <script type="text/javascript" src="scripts/wow.min.js?ver=1.1.0"></script>
+  <script type="text/javascript" src="scripts/mdb.min.js?ver=1.1.0"></script>
+
+  <script type="text/javascript">
+    // ParticlesJS Config.
+    // ParticlesJS Config.
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 700
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+  <script>
+    new WOW().init();
+  </script>
+</body>
+
+</html>
