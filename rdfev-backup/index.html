@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>RDFev</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="apple-touch-icon-precomposed" href="http://qweb.cs.aau.dk/image/favicon256.png">
+    <link rel="shortcut icon"
+          type="image/png"
+          href="http://qweb.cs.aau.dk/image/favicon32.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		
+</head>
+<body>
+<div class="head" id="head">
+    <div id="title">Framework for the Evolution of RDF Data</div>
+    <div class="nav">
+        <ul>
+            <li><a href="../">Back</a></li>
+            <li><a href="#abstract">Publications</a></li>
+            <li><a href="#datasets">Datasets</a></li>
+            <li><a href="#code">Code</a></li>
+        </ul>
+    </div>
+</div>
+<div class="cont">
+    <div id="abstract">
+        <p style="font-weight: bold; font-size:1.2em;">PUBLICATIONS</p>
+        <p style="font-weight: bold; font-size:1.1em;">Towards Fully-fledged Archiving for RDF Datasets</p>
+        <div id="authors">
+            Authors: Olivier Pelgrin, Luis Galárraga and <a href="http://katja-hose.de">Katja Hose</a>.
+        </div>
+	<div>
+        The dynamicity of RDF data has motivated the development of solutions for archiving, i.e., the task of storing and querying previous versions of an RDF dataset. Querying the history of a dataset finds applications in data maintenance and analytics. Notwithstanding the value of RDF archiving, the state of the art in this field is under-developed: (i) most existing systems are neither scalable nor easy to use, (ii) there is no standard way to query RDF archives, and (iii) solutions do not exploit the evolution patterns of real RDF data. On these grounds, this paper surveys the existing works in RDF archiving in order to characterize the gap between the state of the art and a fully-fledged solution. It also provides <i>RDFev</i>, a framework to study the dynamicity of RDF data. We use RDFev to study the evolution of YAGO, DBpedia, and Wikidata, three dynamic and prominent datasets on the Semantic Web. These insights set the ground for the sketch of a fully-fledged archiving solution for RDF data.
+    </div>
+
+    <div class="section" id="datasets">
+    <p style="font-weight: bold; font-size:1.2em;">DATASETS</p>	
+        The datasets used for our experiments can be found below.
+        <p>YAGO: <a href="./data/yago.tar.xz">yago.tar.xz</a></p>
+        <p>DBpedia: <a href="./data/dbpedia.tar.xz">dbpedia.tar.xz</a></p>
+        <p>Wikidata: <a href="./data/wikidata.tar.xz">wikidata.tar.xz</a></p>								
+    </div>
+    <p style="font-weight: bold; font-size:1.2em;">OSTRICH QUERIES</p>
+        <p>The queries used for Ostrich's query experiments can be found here: <a href="./data/queries.zip">queries.zip</a></p>
+	
+    <div class="section" id="code">
+        <p style="font-weight: bold; font-size:1.2em;">CODE</p>
+        <p>The source code for RDFev and instructions to run it can be found at <a href="https://gitlab.com/opelgrin/rdfev">https://gitlab.com/opelgrin/rdfev</a></p>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2020  by <a href="http://qweb.cs.aau.dk">QWeb</a>. All Rights Reserved.
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<html>
+<head>
+    <title>ColChain</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="apple-touch-icon-precomposed" href="http://qweb.cs.aau.dk/image/favicon256.png">
+    <link rel="shortcut icon"
+          type="image/png"
+          href="http://qweb.cs.aau.dk/image/favicon32.png">
+</head>
+<body>
+<div class="head" id="head">
+    <div id="title">ColChain: Collaborative Linked Data Networks</div>
+    <div class="nav">
+        <ul>
+            <li><a href="../">Back</a></li>
+            <li><a href="#abstract">Publications</a></li>
+            <li><a href="#experiments">Experiments</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#downloads">Downloads</a></li>
+        </ul>
+    </div>
+</div>
+<div class="cont">
+    <div id="abstract">
+        <p style="font-weight: bold; font-size:1.2em;">PUBLICATIONS</p>
+        <p style="font-weight: bold; font-size:1.1em;">ColChain: Collaborative Linked Data Networks</p>
+        <div id="authors">
+            Accepted at  <a href="https://www2021.thewebconf.org/">TheWebConf 2021</a>. <a href="files/ColChain.pdf">Download pre-print</a><br/>
+            Authors: <a href="http://aebeloe.com">Christian Aebeloe</a>, Gabriela Montoya and  <a href="http://www.cs.aau.dk/~khose">Katja Hose</a>.
+        </div>
+        One of the major obstacles that currently prevents the Semantic
+Web from exploiting its full potential is that the data it provides
+access to is sometimes not available or outdated. The reason is
+rooted deep within its architecture that relies on data providers to
+keep the data available, queryable, and up-to-date at all times – an
+expectation that many data providers in reality cannot live up to
+for an extended (or infinite) period of time. Hence, decentralized
+architectures have recently been proposed that use replication to
+keep the data available in case the data provider fails. Although
+this increases availability, it does not help keeping the data upto-date or allow users to query and access previous versions of a
+dataset. In this paper, we therefore propose ColChain (COLlaborative knowledge CHAINs), a novel decentralized architecture
+based on blockchains that not only lowers the burden for the data
+providers but at the same time also allows users to propose updates to faulty or outdated data, trace updates back to their origin,
+and query older versions of the data. Our extensive experiments
+show that ColChain reaches these goals while achieving query
+processing performance comparable to the state of the art.
+    </div>
+    <div id="experiments">
+        <p style="font-weight: bold; font-size:1.2em;">EXPERIMENTS</p>
+	We ran our experiments on a server with 128 vCPU cores at 2.5GHz, 64KB L1 cache, 512KB L2 cache and 8192KB L3 cache
+each, and 2TB RAM. We use 128 nodes on the same server with resources split up evenly between them.<br/><br/>
+	We have the following metrics:
+	<ul>
+            <li>Query Execution Time (<b>QET</b>): Execution time of a query in milliseconds.</li>
+            <li>Query Response Time (<b>QRT</b>): Time (in milliseconds) to the first result.</li>
+	    <li>Update Overhead Time (<b>UOT</b>): Time (in milliseconds) from an update is proposed to when applied on all targets.</li>
+	    <li>Version Materialization Time (<b>VMT</b>): Time (in milliseconds) to materialize an earlier version.</li>
+	    <li>Number of Exchanged Messages (<b>NEM</b>): Number of messages exchanged between nodes.</li>
+	    <li>Number of Transferred Bytes (<b>NTB</b>): Number of transferred bytes between nodes.</li>
+        </ul>
+
+	We use <a href="https://github.com/dice-group/LargeRDFBench">LargeRDFBench</a> for data and queries for tests. We use groups <b>S</b>, <b>C</b>, <b>L</b>, and <b>CH</b>.<br/><br/>
+
+        <button class="collapsible">Query Performance</button>
+	<div class="content">
+  	    <p>Query Execution Time (QET) in milliseconds for group S over different systems (log scale)</p>
+            <img src="image/performance_compare.png" width="100%">
+            <p>Query Execution Time (QET) in milliseconds for group S over different community sizes (log scale)</p>
+            <img src="image/performance_community.png" width="100%">
+            <p>Query Response Time (QRT) in milliseconds for all query groups over different systems (log scale)</p>
+            <img src="image/legend1.png" width="100%">
+            <img src="image/rsp_compare.png" width="100%">
+	</div>
+
+        <button class="collapsible">Network Load</button>
+	<div class="content">
+	    <p>Number of Exchanged Messages (NEM) in milliseconds for all query groups over different systems (log scale)</p>
+            <img src="image/legend1.png" width="100%">
+            <img src="image/req_compare.png" width="100%">
+            <p>Number of Transferred Bytes (NTB) in milliseconds for all query groups over different systems (log scale)</p>
+            <img src="image/legend1.png" width="100%">
+            <img src="image/ntb_compare.png" width="100%">
+	</div>
+
+        <button class="collapsible">Updatability</button>
+	<div class="content">
+  	    <p>Update Overhead Time (UOT) in milliseconds for varying community sizes over different sized updates updates (log scale)</p>
+            <img src="image/updates_com.png" width="100%">
+	</div>
+
+        <button class="collapsible">Versioning</button>
+	<div class="content">
+  	    <p>Query Execution Time (QET) in milliseconds for all query groups over roll-backs of chains of different lengths (log scale)</p>
+            <img src="image/legend2.png" width="100%">
+            <img src="image/qet_versioning.png" width="100%">
+            <p>Verison Materialization Time (VMT) in milliseconds for all query groups over roll-backs of chains of different lengths (log scale)</p>
+            <img src="image/legend2.png" width="100%">
+            <img src="image/vmt_versioning.png" width="100%">
+	</div>
+
+        <!--<button class="collapsible">Query Load</button>
+	<div class="content">
+  	    <p><b>We tested with 1,2,3,4, and 5 times the query load executed concurrently throughout the network. 1 query load equals 32 of the 40 queries from LargeRDFBench.</b></p>
+	    <p>Throughput (#Queries / Minute) for each query load</p>
+            <img src="image/load.png" width="100%">
+            <p>Number of timeouts for each query load</p>
+            <img src="image/load_timeout.png" width="100%">
+            <p>Total amouont of time (in ms) spend on executing queries locally on nodes and sharing fragments between nodes during query execution</p>
+            <img src="image/load_load.png" width="100%">
+	</div>-->
+
+        <!--<button class="collapsible">Scalability of the Network</button>
+	<div class="content">
+  	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>-->
+    </div>
+    <div class="section" id="installation">
+        <p style="font-weight: bold; font-size:1.2em;">INSTALLATION</p>
+	
+        <p style="font-weight: bold; font-size:1em;">Requirements</p>
+        Java 8 or newer, Jetty server.
+        <p style="font-weight: bold; font-size:1em;">Installation</p>
+        To install a ColChain or run experiments with ColChain, please follow the <a href="https://github.com/ColChain/ColChain-Java/blob/main/README.md">instructions</a> on our <a href="https://github.com/ColChain/ColChain-Java/">GitHub</a>.
+    
+    <div class="section" id="downloads">
+        <p style="font-weight: bold; font-size:1.2em;">DOWNLOADS</p>
+        <ul>
+            <li>Download the executables or view the sources from our <a href="https://github.com/ColChain/ColChain-Java">GitHub</a>.</li>
+	    <li>Download the <code><a href="files/data.zip" download>HDT files</a></code> used in our experiments.</li>
+	    <li>Download the <code><a href="files/index.zip" download>PPBF index files</a></code> used in our experiments.</li>
+	    <li>Download the <code><a href="files/setup.zip" download>setup files</a></code> used in our experiments.</li>
+	    <li>Download the <code><a href="files/queries.zip" download>queries</a></code> used in our experiments.</li>
+        </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2021  by <a href="http://relweb.cs.aau.dk">RelWeb</a>. All Rights Reserved.
+    </div>
+</div>
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+<!-- Default Statcounter code for
+http://qweb.cs.aau.dk/piqnic/ http://qweb.cs.aau.dk/piqnic/
+-->
+<script type="text/javascript">
+var sc_project=10513837; 
+var sc_invisible=1; 
+var sc_security="d563f64a"; 
+var sc_client_storage="disabled"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/10513837/0/d563f64a/1/"
+alt="Web Analytics Made Easy -
+StatCounter"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>

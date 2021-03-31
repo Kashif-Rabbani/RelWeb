@@ -1,0 +1,406 @@
+<html>
+
+<head>
+  <title>PIQNIC</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="apple-touch-icon-precomposed" href="http://qweb.cs.aau.dk/image/favicon256.png">
+  <link rel="shortcut icon" type="image/png" href="http://qweb.cs.aau.dk/image/favicon32.png">
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="../css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
+  <link href="../css/mdb.min.css?ver=1.1.0" rel="stylesheet">
+  <link href="../css/main.css?ver=1.1.0" rel="stylesheet">
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script type="text/javascript" src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+  <header>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
+      <div class="container"><a class="navbar-brand" href="../"><strong>RelWeb</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#abstract">Publication</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="#experiments">Experiments</a></li>
+            <li class="nav-item"><a class="nav-link" href="#installation">Installation</a></li>
+            <li class="nav-item"><a class="nav-link" href="#downloads">Downloads</a></li>
+          </ul>
+          <!-- <a class="btn btn-primary btn-rounded my-0" href="https://templateflip.com/templates/material-landing" target="_blank">Download</a> -->
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Intro Section-->
+    <section class="view hm-gradient" id="">
+      <div id="particles-js"></div>
+      <div class="site-bg-img d-flex align-items-center">
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-md-10 col-lg-8 text-center text-md-left margins">
+              <div class="white-text">
+                <div class="" data-wow-delay="0.2s">
+                  <h1 class="h1-responsive font-weight-bold mt-sm-5">PIQNIC</h1>
+                  <div class="h5">
+                    A Decentralized Architecture for Sharing and Querying Semantic Data
+                  </div>
+
+                  <div class="alert alert-light" role="alert">
+                    <div id="authors" style=" font-size:1.2em;">
+                      Accepted at <a href="https://2019.eswc-conferences.org/">ESWC 2019</a>. <a href="files/ESWC2019.pdf">Download submitted version</a><br />
+                      Authors: Christian Aebeloe, Gabriela Montoya and <a href="http://www.cs.aau.dk/~khose">Katja Hose</a>.
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </header>
+
+
+
+  <div class="cont">
+    <div id="abstract">
+      <h2 class="pt-5" >Abstact</h2>
+<p style="font-size:1.2em; text-align: justify;" >
+      Although the Semantic Web in principle provides access to a
+      vast Web of interlinked data, the full potential currently remains mostly
+      unexploited. One of the main reasons is the fact that the architecture of
+      the current Web of Data relies on a set of servers providing access to the
+      data. These servers represent bottlenecks and single points of failure that
+      result in instability and unavailability of data at certain points in time. In
+      this paper, we therefore propose a decentralized architecture (Piqnic) for
+      sharing and querying semantic data. By combining both client and server
+      functionality at each participating node and introducing replication,
+      Piqnic avoids bottlenecks and keeps datasets available and queryable
+      although the original source might (temporarily) not be available. Our
+      experimental results using a standard benchmark of real datasets show
+      that Piqnic can serve as an architecture for sharing and querying
+      semantic data, even in the presence of node failures. </p>
+    </div>
+    <div id="experiments">
+      <p style="font-weight: bold; font-size:1.2em;">EXPERIMENTS</p>
+      We ran our experiments on a server with 4xAMD Opteron 6376, 16 core
+      processors at 2.3GHz, 768KB L1 cache, 16MB L2 cache and 16MB L3 cache
+      each (64 cores in total), and 516GB RAM. We use 200 clients on the same server.<br /><br />
+      We have the following metrics:
+      <ul>
+        <li>Execution Time (<b>ET</b>): Execution time of a query in seconds.</li>
+        <li>Completeness (<b>COM</b>): Number of actual retrieved results divided by number of expected results.</li>
+        <li>Number of Messages (<b>NM</b>): Number of messages exchanged between nodes.</li>
+        <li>Number of Transferred Bytes (<b>NTB</b>): Number of transferred bytes between nodes.</li>
+      </ul>
+
+      We use <a href="https://github.com/dice-group/LargeRDFBench">LargeRDFBench</a> for data and queries for tests. We use groups <b>CD</b>, <b>LS</b>, <b>C</b>, <b>L</b>, and <b>CH</b>.<br /><br />
+
+      <button class="collapsible">Query Execution Strategies</button>
+      <div class="content">
+        <p><b>All queries that completed within the timeout had 100% completeness. Some that timed out were in the process of answering, and had returned some of the answers.</b></p>
+        <p>Execution Time (ET) in Seconds for groups CD and LS (log scale)</p>
+        <img src="image/et_s-1.png" width="100%">
+        <p>Execution Time (ET) in Seconds for group C (log scale) - Full has been left out, since it timed out for all cases</p>
+        <img src="image/et_c-1.png" width="100%">
+        <p>Execution Time (ET) in Seconds for groups L and CH (log scale) - Full has been left out, since it timed out for all cases</p>
+        <img src="image/et_lch-1.png" width="100%">
+        <p>Number of Messages for groups CD and LS (log scale) - Not shown for C, L and CH, since Bulk was the only approach that could answer most queries</p>
+        <img src="image/nm_s-1.png" width="100%">
+        <p>Number of Transferred Bytes for groups CD and LS (log scale) - Not shown for C, L and CH, since Bulk was the only approach that could answer most queries</p>
+        <img src="image/ntb_s-1.png" width="100%">
+      </div>
+
+      <button class="collapsible">Robustness of the Network</button>
+      <div class="content">
+        <p>Completeness in Percentage for groups CD and LS, given no recovery time</p>
+        <img src="image/rob_no-1.png" width="100%">
+        <p>Completeness in Percentage for groups CD and LS, given recovery time</p>
+        <img src="image/rob_no_no-1.png" width="100%">
+      </div>
+
+      <button class="collapsible">Impact of Time-To-Live</button>
+      <div class="content">
+        <p>Execution Time (ET) in Seconds for groups CD and LS (log scale)</p>
+        <img src="image/ttl/et_s-1.png" width="100%">
+        <p>Execution Time (ET) in Seconds for group C (log scale)</p>
+        <img src="image/ttl/et_c-1.png" width="100%">
+        <p>Execution Time (ET) in Seconds for groups L and CH (log scale)</p>
+        <img src="image/ttl/et_lch-1.png" width="100%">
+        <p>Completeness in Percentage for groups CD and LS</p>
+        <img src="image/ttl/com_s-1.png" width="100%">
+        <p>Completeness in Percentage for group C</p>
+        <img src="image/ttl/com_c-1.png" width="100%">
+        <p><b>We only show NM and NTB for CD and LS, since they were the groups answered successfully by most TTL values.</b></p>
+        <p>Number of Messages for groups CD and LS (log scale)</p>
+        <img src="image/ttl/nm_s-1.png" width="100%">
+        <p>Number of Transferred Bytes for groups CD and LS (log scale)</p>
+        <img src="image/ttl/ntb_s-1.png" width="100%">
+      </div>
+
+      <button class="collapsible">Impact of Replication Factor</button>
+      <div class="content">
+        <p><b>We tested with 0% replication (each fragment is only located on 1 node), 5% and 10%</b></p>
+        <p>Execution Time (ET) in Seconds for groups CD and LS (log scale)</p>
+        <img src="image/rep/et_s-1.png" width="100%">
+        <p>Execution Time (ET) in Seconds for group C (log scale)</p>
+        <img src="image/rep/et_c-1.png" width="100%">
+        <p>Execution Time (ET) in Seconds for groups L and CH (log scale)</p>
+        <img src="image/rep/et_lch-1.png" width="100%">
+        <p>Completeness in Percentage for groups CD and LS</p>
+        <img src="image/rep/com_s-1.png" width="100%">
+        <p>Completeness in Percentage for group C</p>
+        <img src="image/rep/com_c-1.png" width="100%">
+        <p><b> NM and NTB are the same with the exception of small fluctuations due to the specific neighbourhoods of the tested nodes. This is due to the network structure being the same (same amount of nodes contacted).</b></p>
+      </div>
+
+      <button class="collapsible">Impact of Number of Neighbours</button>
+      <div class="content">
+        <p><b>We tested with 2, 5 and 10 neighbors. We also tested with 0 and 1 neighbors, however none of the queries returned any results.</b></p>
+        <p>Execution Time (ET) in Seconds for groups CD and LS (log scale)</p>
+        <img src="image/nn/et_s-1.png" width="100%">
+        <p>Execution Time (ET) in Seconds for group C (log scale)</p>
+        <img src="image/nn/et_c-1.png" width="100%">
+        <p>Execution Time (ET) in Seconds for groups L and CH (log scale)</p>
+        <img src="image/nn/et_lch-1.png" width="100%">
+        <p>Completeness in Percentage for groups CD and LS</p>
+        <img src="image/nn/com_s-1.png" width="100%">
+        <p>Completeness in Percentage for group C</p>
+        <img src="image/nn/com_c-1.png" width="100%">
+      </div>
+
+      <!--<button class="collapsible">Query Load</button>
+	<div class="content">
+  	    <p><b>We tested with 1,2,3,4, and 5 times the query load executed concurrently throughout the network. 1 query load equals 32 of the 40 queries from LargeRDFBench.</b></p>
+	    <p>Throughput (#Queries / Minute) for each query load</p>
+            <img src="image/load.png" width="100%">
+            <p>Number of timeouts for each query load</p>
+            <img src="image/load_timeout.png" width="100%">
+            <p>Total amouont of time (in ms) spend on executing queries locally on nodes and sharing fragments between nodes during query execution</p>
+            <img src="image/load_load.png" width="100%">
+	</div>-->
+
+      <!--<button class="collapsible">Scalability of the Network</button>
+	<div class="content">
+  	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	</div>-->
+    </div>
+    <div class="section" id="installation">
+      <p style="font-weight: bold; font-size:1.2em;">INSTALLATION</p>
+      PIQNIC is currently implemented only as a prototype for testing the performance and availability of a network. Some features, described in the paper are therefore missing. Here is a list of known differences:
+
+      <ul>
+        <li>Missing/low-efficient implementation for things not essential for performance, e.g. joining the network and adding new fragments to the network.</li>
+        <li>The random part of the neighbors are not random, since they are the least related neighbors of other nodes.</li>
+        <li>No checks for insertion of fragments, and if it is possible. The request is passed on if an exception is thrown.</li>
+        <li>Request identifiers are used to avoid responding to the same request twice instead of fragment identifier used to not answer the same fragment twice.</li>
+        <li>The query exection strategies are in the code called flood (single), bind (bulk) and down (full).</li>
+      </ul>
+
+      <p style="font-weight: bold;">In order to select query execution strategy, set the value of the field <i>PROCESSOR</i> in dk.aau.cs.qweb.piqnic.jena.PiqnicJenaConstants to either <i>ProcessingType.FLOOD</i>, <i>ProcessingType.BIND</i>, or
+        <i>ProcessingType.DOWN</i>.</p>
+      <p style="font-weight: bold; font-size:1em;">Requirements</p>
+      Java 8 or newer.
+      <p style="font-weight: bold; font-size:1em;">Installation</p>
+      <ol>
+        <li><a href="#downloads">Download</a> the .jar-file.</li>
+        <li>Run with the following command: <code>java -jar [filename].jar [config].json</code>:</li>
+        <li>Connect to the CLI port and follow the steps on screen.</li>
+        <li>Example config.json:</li>
+      </ol>
+
+      <ol class="lst">
+        <li><code>{</code></li>
+        <li><code>&nbsp;&nbsp;"replication" : 4,</code></li>
+        <li><code>&nbsp;&nbsp;"ports" : {</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;"listener" : 7625,</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;"cli" : 7626,</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;"test" : 7627</code></li>
+        <li><code>&nbsp;&nbsp;"maxFragments" : 200,</code></li>
+        <li><code>&nbsp;&nbsp;"timeToLive" : 5,</code></li>
+        <li><code>&nbsp;&nbsp;"shuffleLength" : 4,</code></li>
+        <li><code>&nbsp;&nbsp;"neighbours" : 5,</code></li>
+        <li><code>&nbsp;&nbsp;"minutesTilShuffle" : 200,</code></li>
+        <li><code>&nbsp;&nbsp;"maxDelay" : 500,</code></li>
+        <li><code>&nbsp;&nbsp;"version" : "0.1-SNAPSHOT"</code></li>
+        <li><code>}</code></li>
+      </ol>
+
+      <div class="section" id="downloads">
+        <p style="font-weight: bold; font-size:1.2em;">DOWNLOADS</p>
+        <ul>
+          <li>Download the <code><a href="files/piqnic.jar" download>piqnic.jar</a></code> file or view the sources on <a href="https://github.com/Chraebe/PIQNIC">GitHub</a>.</li>
+          <li>Download the <code><a href="files/data.zip" download>HDT files</a></code> used in our experiments.</li>
+          <li>Download the <code><a href="files/queries.zip" download>queries</a></code> used in our experiments.</li>
+        </ul>
+      </div>
+      <div class="footer">
+        &copy; Copyright 2015-2018 by <a href="http://qweb.cs.aau.dk">QWeb</a>. All Rights Reserved.
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../scripts/jquery.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="../scripts/popper.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="../scripts/bootstrap.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="../scripts/wow.min.js?ver=1.1.0"></script>
+    <script type="text/javascript" src="../scripts/mdb.min.js?ver=1.1.0"></script>
+
+    <script type="text/javascript">
+      // ParticlesJS Config.
+      // ParticlesJS Config.
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 700
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    </script>
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+    <!-- Default Statcounter code for
+http://qweb.cs.aau.dk/piqnic/ http://qweb.cs.aau.dk/piqnic/
+-->
+    <script type="text/javascript">
+      var sc_project = 10513837;
+      var sc_invisible = 1;
+      var sc_security = "d563f64a";
+      var sc_client_storage = "disabled";
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+      <div class="statcounter"><a title="Web Analytics
+Made Easy - StatCounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/10513837/0/d563f64a/1/" alt="Web Analytics Made Easy -
+StatCounter"></a></div>
+    </noscript>
+    <!-- End of Statcounter Code -->
+</body>
+
+</html>

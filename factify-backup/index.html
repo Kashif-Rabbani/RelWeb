@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>FacTify</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="apple-touch-icon-precomposed" href="http://qweb.cs.aau.dk/image/favicon256.png">
+    <link rel="shortcut icon"
+          type="image/png"
+          href="http://qweb.cs.aau.dk/image/favicon32.png">
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+		
+</head>
+<body>
+<div class="head" id="head">
+    <div id="title">Retrieving Textual Evidence for Knowledge Graph Facts</div>
+    <div class="nav">
+        <ul>
+            <li><a href="../">Back</a></li>
+            <li><a href="#abstract">Publications</a></li>
+            <li><a href="#dataset">Dataset</a></li>
+            <li><a href="#examples">Evaluation</a></li>
+        </ul>
+    </div>
+</div>
+<div class="cont">
+    <div id="abstract">
+        <p style="font-weight: bold; font-size:1.2em;">PUBLICATIONS</p>
+        <p style="font-weight: bold; font-size:1.1em;">Retrieving Textual Evidence for Knowledge Graph Facts</p>
+        <div id="authors">
+            Paper accepted at <a href="https://2019.eswc-conferences.org/">ESWC 2019</a>. <a href="files/ESWC2019.pdf">Download submitted version</a><br/>
+            Authors: <a href="http://gonencercan.com/">Gonenc Ercan</a>, <a href="http://www.aub.edu.lb/pages/profile.aspx?memberId=se58">Shady Elbassuoni</a> and <a href="http://katja-hose.de">Katja Hose</a>.
+        </div>
+	<div>
+	Knowledge graphs have become vital sources for semantic search and provide users with precise answers to their information needs. Knowledge graphs often consist of billions of facts, typically encoded in the form of RDF triples. In most cases, these facts are extracted automatically and can thus be susceptible to errors. For many applications, it can therefore be very useful to complement knowledge graph facts with textual evidence. For instance, it can help users make informed decisions about the validity of the facts that are returned as part of an answer to a query. It can also help users find more contextual information about the facts that go beyond the information contained in the knowledge graph itself. In this paper, we therefore propose FacTify, an approach that given a knowledge graph and a text corpus, retrieves the top-k most relevant textual passages for a given set of facts. Since our goal is to retrieve short passages, we develop a set of IR models combining exact matching through the Okapi BM25 model with semantic matching using word embeddings. To evaluate our approach, we build an extensive benchmark consisting of facts extracted from a large knowledge graph (YAGO) and text passages retrieved from a large text corpus (Wikipedia). Our benchmark has been assessed through crowdsourcing and is publicly available. Our experimental results demonstrate the effectiveness of our approach in retrieving textual evidence for knowledge graph facts, compared to many baseline approaches.
+    </div>
+    <div class="section" id="dataset">
+	<p style="font-weight: bold; font-size:1.2em;">DATASET</p>
+	
+		<p>Knowledge subgraphs (i.e., queries) are extracted from <a href="https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/"> YAGO</a>. You can find the queries in the file <a href="files/queries.csv">queries.csv</a>. The file is comma separated, with the following fields qid, triple, Keywords. If the query consists of multiple triples, the triples are separated by the ";" character. In the final column the queries are provided in natural language form.</p>
+						
+		<p>The text corpus is used to retrieve textual passages for the queries. Passages are extracted from <a href="http://en.wikipedia.org">Wikipedia</a></li> using the dump file from 2018-08-01 and building overlapping passages of 3 consecutive sentences. The sentences are detected using <a href="https://stanfordnlp.github.io/CoreNLP/">Stanford NLP Core </a> version 3.9.1. The corpus after segmentation is available for <a href="https://www.dropbox.com/s/hcu4zxyvsi7f5f4/wiki.7z?dl=0">download</a>, the compressed file (using 7zip) two files, wiki.text and passids.txt. The first file simply contains the text of passages, the second file is for annotating the passages and stores the passageid, offset for the passage in wiki.text file and end offset. An <a href="files/passage_reader.py">example code</a> for reading the passages is provided, the below python code shows how to print all passages to standard output.</p>
+		
+		<pre class="prettyprint lang-python">
+		<code>
+from passage_reader import PassageReader
+
+# Buffer size is the number of passages to store in memory, this amounts to roughly 300MB
+passReader = PassageReader("wiki.text", "passids.txt", buffer_size=1000000)		
+
+with passReader as preader:
+	for (passid, text) in preader:
+		print(passid)
+		print(text)	
+		</code>
+		</pre>
+		
+    </div>
+	<div class="section" id="evaluation">
+		<p style="font-weight: bold; font-size:1.2em;">Evaluation</p>
+		<p>A new algorithm targeting this task can use the queries and the passages to produce ranked results for each query. If the provided <a href="files/eval.py">evaluation script</a> is to be used, the output file format should contain query id, passage id, text of passage and relevancy score in tab separated file. The file should be sorted with respect to query id and the relevancy score. </p>
+				
+        <pre class="prettyprint">
+<code>1 	Nancy Lincoln#31 	They had three children:  Sarah Lincoln (February 10, 1807 January 20, 1828). Abraham Lincoln (February 12, 1809 April 15, 1865). Thomas Lincoln, Jr. (died in infancy, 1812).	16.07022454208584
+1	Nancy Lincoln#32	Abraham Lincoln (February 12, 1809 - April 15, 1865). Thomas Lincoln, Jr. (died in infancy, 1812). The young family lived in what was then Hardin County, Kentucky (now LaRue). 	15.230758500842862
+1	Nancy Lincoln#30	A record of their marriage license is held at the county courthouse. They had three children:  Sarah Lincoln (February 10, 1807 - January 20, 1828). Abraham Lincoln (February 12, 1809 - April 15, 1865). 	14.34208330071841
+1	1865 in the United States#99	April 15 - Abraham Lincoln, 16th President of the United States from 1861 to 1865 (born 1809). April 26 - John Wilkes Booth, actor and assassin of Abraham Lincoln (born 1838). May 20 - William K. Sebastian, U.S. Senator from Arkansas from 1848 to 1861 (born 1812). 	14.306765387697894</code>
+		</pre>
+        
+		<p> The evaluation script creates a Spreadsheet file containing NDCG, MRR and Precision values. The results in the article can be reproduced using the script <a href="files/reproduce.sh">reproduce.sh</a>, which automatically downloads required files and executes evaluation.
+		</p>
+	</div>
+	
+    <div class="section" id="downloads">
+        <p style="font-weight: bold; font-size:1.2em;">Downloads</p>
+        <ul>
+		<li>Segmented passages extracted from Wikipedia - <a href="https://www.dropbox.com/s/hcu4zxyvsi7f5f4/wiki.7z?dl=0"> Download </a></li>
+		<li>Example Python code to read the passages - <a href="files/passage_reader.py"> Download </a></li> 
+		<li>The  <a href="files/relevance_scores.csv" download>Relevance scores</a></li>
+		<li>The  <a href="files/eval.py" download>Evaluation script</a></li>
+		<li>Outputs of the evaluated systems - <a href="files/outputs.zip">Download</a></code></li>
+		<li>Quickstart for evaluation - <a href="files/reproduce.sh">Download</a></code></li>
+        </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2018  by <a href="http://qweb.cs.aau.dk">QWeb</a>. All Rights Reserved.
+    </div>
+</div>
+<!-- Default Statcounter code for
+http://qweb.cs.aau.dk/FacTify http://qweb.cs.aau.dk/factify/
+-->
+<script type="text/javascript">
+var sc_project=10513834; 
+var sc_invisible=1; 
+var sc_security="1bf81425"; 
+var sc_client_storage="disabled"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/10513834/0/1bf81425/1/"
+alt="Web Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>
