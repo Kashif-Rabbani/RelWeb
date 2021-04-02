@@ -1,5 +1,5 @@
 body{
-    padding:5px;
+    /* padding:5px; */
     font-family: "Open Sans", "Lucida Sans", "Trebuchet MS", Verdana, Arial, Sans-Serif;
 }
 
@@ -91,7 +91,7 @@ pre.prettyprint {
     /* max-height: 600px; */
     white-space: pre;
     word-wrap: normal;
-    padding: 10px;   
+    padding: 10px;
 }
 .lst {
     background:#016ca2 url(/image/gutter.gif) 2.3em 0 repeat-y;
